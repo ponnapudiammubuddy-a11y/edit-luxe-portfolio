@@ -1,16 +1,14 @@
 import Logo from './Logo';
 import { Instagram, Youtube, Linkedin, Twitter } from 'lucide-react';
-
 const Footer = () => {
-  return (
-    <footer className="py-12 border-t border-border/50">
+  return <footer className="py-12 border-t border-border/50">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo */}
           <div className="flex items-center gap-3">
             <Logo size="sm" />
             <span className="font-display font-bold text-lg">
-              VE <span className="text-primary">Edit</span>
+              Visual <span className="text-primary">Edit</span>
             </span>
           </div>
 
@@ -25,15 +23,9 @@ const Footer = () => {
 
           {/* Social */}
           <div className="flex gap-4">
-            {[Instagram, Youtube, Linkedin, Twitter].map((Icon, index) => (
-              <a
-                key={index}
-                href="#"
-                className="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:bg-primary/20 transition-colors group"
-              >
+            {[Instagram, Youtube, Linkedin, Twitter].map((Icon, index) => <a key={index} href="#" className="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:bg-primary/20 transition-colors group">
                 <Icon className="w-4 h-4 text-muted-foreground group-hover:text-primary transition-colors" />
-              </a>
-            ))}
+              </a>)}
           </div>
         </div>
 
@@ -41,8 +33,6 @@ const Footer = () => {
           <p>© {new Date().getFullYear()} VE Edit. All rights reserved. Crafting Visual Excellence.</p>
         </div>
       </div>
-    </footer>
-  );
+    </footer>;
 };
-
 export default Footer;
