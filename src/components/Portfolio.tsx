@@ -6,50 +6,57 @@ const categories = ['All', 'Cinematic', 'Social Media', 'Motion Graphics', 'Bran
 const projects = [
   {
     id: 1,
-    title: 'Luxury Brand Commercial',
+    title: 'Cinematic Car Commercial',
     category: 'Cinematic',
-    thumbnail: 'https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&q=80',
-    description: 'High-end product showcase with cinematic color grading',
+    thumbnail: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80',
+    videoUrl: 'https://www.youtube.com/embed/1La4QzGeaaQ',
+    description: 'High-end automotive showcase with cinematic color grading and drone shots',
   },
   {
     id: 2,
-    title: 'Fitness App Promo',
-    category: 'Social Media',
-    thumbnail: 'https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80',
-    description: 'Dynamic social media ad campaign',
+    title: 'Fashion Brand Story',
+    category: 'Brand Films',
+    thumbnail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
+    videoUrl: 'https://www.youtube.com/embed/d4L9YnJzqJo',
+    description: 'Luxury fashion documentary with elegant transitions',
   },
   {
     id: 3,
-    title: 'Tech Startup Intro',
+    title: 'Tech Product Launch',
     category: 'Motion Graphics',
     thumbnail: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
-    description: 'Animated logo and brand identity reveal',
+    videoUrl: 'https://www.youtube.com/embed/GtL1huin9EE',
+    description: 'Dynamic 3D product reveal with motion graphics',
   },
   {
     id: 4,
-    title: 'Restaurant Story',
-    category: 'Brand Films',
-    thumbnail: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
-    description: 'Documentary-style brand storytelling',
+    title: 'Travel Cinematic Reel',
+    category: 'Cinematic',
+    thumbnail: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80',
+    videoUrl: 'https://www.youtube.com/embed/reUZRyXxUs4',
+    description: 'Breathtaking travel montage with color grading',
   },
   {
     id: 5,
-    title: 'Music Video Edit',
-    category: 'Cinematic',
-    thumbnail: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=800&q=80',
-    description: 'Creative visual storytelling for artists',
+    title: 'Social Media Ad Campaign',
+    category: 'Social Media',
+    thumbnail: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80',
+    videoUrl: 'https://www.youtube.com/embed/EngW7tLk6R8',
+    description: 'Vertical format ads optimized for engagement',
   },
   {
     id: 6,
-    title: 'E-commerce Campaign',
-    category: 'Social Media',
-    thumbnail: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
-    description: 'Product showcase optimized for conversions',
+    title: 'Restaurant Brand Film',
+    category: 'Brand Films',
+    thumbnail: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
+    videoUrl: 'https://www.youtube.com/embed/cNHLxkbpWpQ',
+    description: 'Culinary storytelling with appetizing visuals',
   },
 ];
 
 const Portfolio = () => {
   const [activeCategory, setActiveCategory] = useState('All');
+  const [playingVideo, setPlayingVideo] = useState<number | null>(null);
 
   const filteredProjects = activeCategory === 'All'
     ? projects
@@ -96,22 +103,37 @@ const Portfolio = () => {
               key={project.id}
               className="group relative rounded-2xl overflow-hidden glass-card transition-all duration-500 hover:scale-[1.02] hover:glow-effect"
             >
-              {/* Thumbnail */}
-              <div className="relative aspect-video overflow-hidden">
-                <img
-                  src={project.thumbnail}
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                {/* Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                {/* Play Button */}
-                <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <button className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center hover:bg-primary transition-colors glow-effect">
-                    <Play className="w-6 h-6 text-primary-foreground ml-1" />
-                  </button>
-                </div>
+              {/* Thumbnail / Video */}
+              <div className="relative aspect-video overflow-hidden bg-background/50">
+                {playingVideo === project.id ? (
+                  <iframe
+                    src={`${project.videoUrl}?autoplay=1&rel=0`}
+                    title={project.title}
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full absolute inset-0"
+                  />
+                ) : (
+                  <>
+                    <img
+                      src={project.thumbnail}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    {/* Overlay */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                    
+                    {/* Play Button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <button 
+                        onClick={() => setPlayingVideo(project.id)}
+                        className="w-16 h-16 rounded-full bg-primary/90 flex items-center justify-center hover:bg-primary hover:scale-110 transition-all duration-300 glow-effect shadow-lg shadow-primary/30"
+                      >
+                        <Play className="w-6 h-6 text-primary-foreground ml-1" fill="currentColor" />
+                      </button>
+                    </div>
+                  </>
+                )}
               </div>
 
               {/* Content */}
