@@ -1,4 +1,4 @@
-import { Play, Sparkles, ArrowRight } from 'lucide-react';
+import { Play, Sparkles, ArrowRight, Phone } from 'lucide-react';
 import { Button } from './ui/button';
 import Logo from './Logo';
 const Hero = () => {
@@ -37,7 +37,7 @@ const Hero = () => {
           </p>
 
           {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up-delayed">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-fade-up-delayed flex-wrap">
             <Button variant="hero" size="xl" className="group">
               <Play className="w-5 h-5 transition-transform group-hover:scale-110" />
               Watch My Work
@@ -45,6 +45,10 @@ const Hero = () => {
             <Button variant="heroOutline" size="xl" className="group">
               Start Your Project
               <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+            </Button>
+            <Button variant="heroOutline" size="xl" className="group">
+              <Phone className="w-5 h-5 transition-transform group-hover:scale-110" />
+              Book a Call
             </Button>
           </div>
 
