@@ -11,7 +11,10 @@ const Hero = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Animated Logo */}
-          
+          <div className="flex justify-center mb-8 animate-fade-up">
+            <Logo size="lg" animated />
+          </div>
+
 
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-8 animate-fade-up">
