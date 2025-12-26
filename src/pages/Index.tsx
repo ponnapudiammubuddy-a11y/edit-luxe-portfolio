@@ -8,6 +8,7 @@ import Testimonials from '@/components/Testimonials';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
 import FloatingBubbles from '@/components/FloatingBubbles';
+import InteractiveBubbles from '@/components/InteractiveBubbles';
 
 const Index = () => {
   return (
@@ -31,6 +32,7 @@ const Index = () => {
 
       <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
         <FloatingBubbles />
+        <InteractiveBubbles />
         <Navbar />
         
         <main>
