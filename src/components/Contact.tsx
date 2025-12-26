@@ -1,27 +1,25 @@
 import { useState } from 'react';
 import { Send, Mail, Phone, MapPin, MessageCircle, Instagram, Youtube, Linkedin } from 'lucide-react';
 import { Button } from './ui/button';
-
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     project: '',
-    message: '',
+    message: ''
   });
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
     console.log('Form submitted:', formData);
   };
-
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
   };
-
-  return (
-    <section id="contact" className="py-24 relative">
+  return <section id="contact" className="py-24 relative">
       {/* Background */}
       <div className="absolute inset-0 bg-gradient-radial opacity-50" />
 
@@ -53,7 +51,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="text-foreground">hello@veedit.com</p>
+                    <p className="text-foreground">onevisualedits@gmail.com</p>
                   </div>
                 </a>
 
@@ -63,7 +61,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Phone</p>
-                    <p className="text-foreground">+1 (234) 567-890</p>
+                    <p className="text-foreground">9121899077</p>
                   </div>
                 </a>
 
@@ -73,7 +71,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Location</p>
-                    <p className="text-foreground">Remote Worldwide</p>
+                    <p className="text-foreground">​Remote , world wide     </p>
                   </div>
                 </div>
               </div>
@@ -82,19 +80,18 @@ const Contact = () => {
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-sm text-muted-foreground mb-4">Follow Me</p>
                 <div className="flex gap-3">
-                  {[
-                    { icon: Instagram, href: '#' },
-                    { icon: Youtube, href: '#' },
-                    { icon: Linkedin, href: '#' },
-                  ].map((social, index) => (
-                    <a
-                      key={index}
-                      href={social.href}
-                      className="w-10 h-10 rounded-xl glass-card flex items-center justify-center hover:bg-primary/20 transition-colors group"
-                    >
+                  {[{
+                  icon: Instagram,
+                  href: '#'
+                }, {
+                  icon: Youtube,
+                  href: '#'
+                }, {
+                  icon: Linkedin,
+                  href: '#'
+                }].map((social, index) => <a key={index} href={social.href} className="w-10 h-10 rounded-xl glass-card flex items-center justify-center hover:bg-primary/20 transition-colors group">
                       <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </a>
-                  ))}
+                    </a>)}
                 </div>
               </div>
             </div>
@@ -106,39 +103,17 @@ const Contact = () => {
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium mb-2">Name</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-muted border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                    placeholder="Your name"
-                    required
-                  />
+                  <input type="text" name="name" value={formData.name} onChange={handleChange} className="w-full px-4 py-3 rounded-xl bg-muted border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Your name" required />
                 </div>
                 <div>
                   <label className="block text-sm font-medium mb-2">Email</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl bg-muted border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                    placeholder="your@email.com"
-                    required
-                  />
+                  <input type="email" name="email" value={formData.email} onChange={handleChange} className="w-full px-4 py-3 rounded-xl bg-muted border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" placeholder="your@email.com" required />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium mb-2">Project Type</label>
-                <select
-                  name="project"
-                  value={formData.project}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl bg-muted border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
-                  required
-                >
+                <select name="project" value={formData.project} onChange={handleChange} className="w-full px-4 py-3 rounded-xl bg-muted border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all" required>
                   <option value="">Select a service</option>
                   <option value="video-editing">Video Editing</option>
                   <option value="motion-graphics">Motion Graphics</option>
@@ -150,15 +125,7 @@ const Contact = () => {
 
               <div>
                 <label className="block text-sm font-medium mb-2">Message</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-xl bg-muted border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none"
-                  placeholder="Tell me about your project..."
-                  required
-                />
+                <textarea name="message" value={formData.message} onChange={handleChange} rows={5} className="w-full px-4 py-3 rounded-xl bg-muted border border-border focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all resize-none" placeholder="Tell me about your project..." required />
               </div>
 
               <Button type="submit" variant="hero" className="w-full">
@@ -171,20 +138,14 @@ const Contact = () => {
       </div>
 
       {/* Floating WhatsApp Button */}
-      <a
-        href="https://wa.me/1234567890"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50 group"
-        style={{ boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)' }}
-      >
+      <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50 group" style={{
+      boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)'
+    }}>
         <MessageCircle className="w-6 h-6 text-white" />
         <span className="absolute right-full mr-3 px-3 py-1.5 rounded-lg bg-card text-sm whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
           Chat on WhatsApp
         </span>
       </a>
-    </section>
-  );
+    </section>;
 };
-
 export default Contact;
