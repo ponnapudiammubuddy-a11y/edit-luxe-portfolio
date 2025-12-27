@@ -15,14 +15,7 @@ const Hero = () => {
             <Logo size="lg" animated />
           </div>
 
-          {/* Badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-card mb-6 animate-fade-up">
-            <Sparkles className="w-4 h-4 text-primary" />
-            <span className="text-sm text-muted-foreground">
-              Professional Video Editing Studio
-            </span>
-          </div>
-
+          
           {/* Main Heading */}
           <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6 animate-fade-up leading-tight">
             Crafting{' '}
@@ -63,7 +56,7 @@ const Hero = () => {
             value: '50+',
             label: 'Happy Clients'
           }, {
-            value: '5+',
+            value: '3+',
             label: 'Years Experience'
           }].map((stat, index) => <div key={stat.label} className="text-center animate-fade-up" style={{
             animationDelay: `${0.4 + index * 0.1}s`
