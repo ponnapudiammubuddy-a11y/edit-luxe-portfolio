@@ -136,7 +136,7 @@ const Contact = () => {
       </div>
 
       {/* Floating WhatsApp Button */}
-      <a href="https://wa.me/1234567890" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50 group" style={{
+      <a href="https://wa.me/919121899077" target="_blank" rel="noopener noreferrer" className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:scale-110 transition-transform z-50 group" style={{
       boxShadow: '0 0 20px rgba(34, 197, 94, 0.4)'
     }}>
         <MessageCircle className="w-6 h-6 text-white" />
