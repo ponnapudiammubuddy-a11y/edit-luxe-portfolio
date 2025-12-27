@@ -14,7 +14,7 @@ const Logo = ({ size = 'md', animated = false }: LogoProps) => {
 
   return (
     <div
-      className={`${sizeClasses[size]} ${animated ? 'animate-logo-reveal' : ''} 
+      className={`${sizeClasses[size]} ${animated ? 'animate-float' : ''} 
         relative flex items-center justify-center 
         transition-all duration-500 ease-out
         hover:scale-110 hover:rotate-y-12
