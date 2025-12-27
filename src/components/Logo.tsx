@@ -9,12 +9,12 @@ const Logo = ({ size = 'md', animated = false }: LogoProps) => {
   const sizeClasses = {
     sm: 'w-12 h-12',
     md: 'w-16 h-16',
-    lg: 'w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48',
+    lg: 'w-44 h-44 md:w-52 md:h-52 lg:w-60 lg:h-60',
   };
 
   return (
     <div
-      className={`${sizeClasses[size]} ${animated ? 'animate-float' : ''} 
+      className={`${sizeClasses[size]} ${animated ? 'animate-logo-premium' : ''} 
         relative flex items-center justify-center 
         transition-all duration-500 ease-out
         hover:scale-110 hover:rotate-y-12
