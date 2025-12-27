@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Send, Mail, Phone, MapPin, MessageCircle, Instagram, Youtube, Linkedin } from 'lucide-react';
+import { Send, Mail, Phone, MapPin, MessageCircle, Instagram, Youtube, Linkedin, Twitter } from 'lucide-react';
 import { Button } from './ui/button';
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -80,18 +80,16 @@ const Contact = () => {
               <div className="mt-8 pt-8 border-t border-border">
                 <p className="text-sm text-muted-foreground mb-4">Follow Me</p>
                 <div className="flex gap-3">
-                  {[{
-                  icon: Instagram,
-                  href: '#'
-                }, {
-                  icon: Youtube,
-                  href: '#'
-                }, {
-                  icon: Linkedin,
-                  href: '#'
-                }].map((social, index) => <a key={index} href={social.href} className="w-10 h-10 rounded-xl glass-card flex items-center justify-center hover:bg-primary/20 transition-colors group">
-                      <social.icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
-                    </a>)}
+                  {[
+                    { Icon: Instagram, href: 'https://www.instagram.com/one_visual_edits?igsh=MXc1ZXU2OHQ5c3ViOA==' },
+                    { Icon: Youtube, href: 'https://youtube.com/@onevisualedits?si=QD1g_0cdzAjVkQWF' },
+                    { Icon: Linkedin, href: 'https://www.linkedin.com/in/one-visual-edits-757279371' },
+                    { Icon: Twitter, href: 'https://x.com/B__Jeevan' },
+                  ].map((social, index) => (
+                    <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl glass-card flex items-center justify-center hover:bg-primary/20 transition-colors group">
+                      <social.Icon className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors" />
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
