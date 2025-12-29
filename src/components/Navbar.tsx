@@ -3,6 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import { Button } from './ui/button';
+import { useAuth } from '@/hooks/useAuth';
 const navLinks = [{
   name: 'Home',
   href: '/'
@@ -23,6 +24,7 @@ const navLinks = [{
   href: '/contact'
 }];
 const Navbar = () => {
+  const { user } = useAuth();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   useEffect(() => {
@@ -47,6 +49,12 @@ const Navbar = () => {
               {link.name}
               <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
             </Link>)}
+          {user && (
+            <Link to="/admin" className="text-muted-foreground hover:text-foreground transition-colors duration-300 text-sm font-medium relative group">
+              Admin
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
+            </Link>
+          )}
           <Button variant="hero" size="sm">
             Get a Quote
           </Button>
@@ -64,6 +72,11 @@ const Navbar = () => {
           {navLinks.map(link => <Link key={link.name} to={link.href} className="text-muted-foreground hover:text-foreground transition-colors duration-300 py-2" onClick={() => setIsMobileMenuOpen(false)}>
               {link.name}
             </Link>)}
+          {user && (
+            <Link to="/admin" className="text-muted-foreground hover:text-foreground transition-colors duration-300 py-2" onClick={() => setIsMobileMenuOpen(false)}>
+              Admin
+            </Link>
+          )}
           <Button variant="hero" className="mt-4">
             Get a Quote
           </Button>
