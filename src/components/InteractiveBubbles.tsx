@@ -105,7 +105,8 @@ const InteractiveBubbles = () => {
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
+      const target = e.target;
+      if (!(target instanceof Element)) return;
       
       // Check if hovering over interactive element
       const isInteractive = target.matches(
@@ -120,7 +121,8 @@ const InteractiveBubbles = () => {
     };
 
     const handleMouseEnter = (e: MouseEvent) => {
-      const target = e.target as HTMLElement;
+      const target = e.target;
+      if (!(target instanceof Element)) return;
       
       const isInteractive = target.matches(
         'button, a, [role="button"], input, select, textarea, [tabindex]:not([tabindex="-1"]), .interactive'
