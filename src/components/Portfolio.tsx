@@ -9,7 +9,7 @@ const projects = [
     title: 'Cinematic Car Commercial',
     category: 'Cinematic',
     thumbnail: 'https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80',
-    videoUrl: 'https://www.youtube.com/embed/1La4QzGeaaQ',
+    videoUrl: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
     description: 'High-end automotive showcase with cinematic color grading and drone shots',
   },
   {
@@ -17,7 +17,7 @@ const projects = [
     title: 'Fashion Brand Story',
     category: 'Brand Films',
     thumbnail: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80',
-    videoUrl: 'https://www.youtube.com/embed/d4L9YnJzqJo',
+    videoUrl: 'https://www.youtube.com/embed/ScMzIvxBSi4',
     description: 'Luxury fashion documentary with elegant transitions',
   },
   {
@@ -25,7 +25,7 @@ const projects = [
     title: 'Tech Product Launch',
     category: 'Motion Graphics',
     thumbnail: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
-    videoUrl: 'https://www.youtube.com/embed/GtL1huin9EE',
+    videoUrl: 'https://www.youtube.com/embed/jNQXAC9IVRw',
     description: 'Dynamic 3D product reveal with motion graphics',
   },
   {
@@ -33,7 +33,7 @@ const projects = [
     title: 'Travel Cinematic Reel',
     category: 'Cinematic',
     thumbnail: 'https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?w=800&q=80',
-    videoUrl: 'https://www.youtube.com/embed/reUZRyXxUs4',
+    videoUrl: 'https://www.youtube.com/embed/L_jWHffIx5E',
     description: 'Breathtaking travel montage with color grading',
   },
   {
@@ -41,7 +41,7 @@ const projects = [
     title: 'Social Media Ad Campaign',
     category: 'Social Media',
     thumbnail: 'https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=800&q=80',
-    videoUrl: 'https://www.youtube.com/embed/EngW7tLk6R8',
+    videoUrl: 'https://www.youtube.com/embed/kJQP7kiw5Fk',
     description: 'Vertical format ads optimized for engagement',
   },
   {
@@ -49,7 +49,7 @@ const projects = [
     title: 'Restaurant Brand Film',
     category: 'Brand Films',
     thumbnail: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=80',
-    videoUrl: 'https://www.youtube.com/embed/cNHLxkbpWpQ',
+    videoUrl: 'https://www.youtube.com/embed/9bZkp7q19f0',
     description: 'Culinary storytelling with appetizing visuals',
   },
 ];
