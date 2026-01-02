@@ -24,9 +24,9 @@ const Footer = () => {
           {/* Social */}
           <div className="flex gap-4">
             {[
-              { Icon: Instagram, url: 'https://www.instagram.com/one_visual_edits?igsh=MXc1ZXU2OHQ5c3ViOA==' },
-              { Icon: Youtube, url: 'https://youtube.com/@onevisualedits?si=QD1g_0cdzAjVkQWF' },
-              { Icon: Linkedin, url: 'https://www.linkedin.com/in/one-visual-edits-757279371' },
+              { Icon: Instagram, url: 'https://www.instagram.com/shortformvideoeditor.in?igsh=MXc1ZXU2OHQ5c3ViOA==' },
+              { Icon: Youtube, url: 'https://youtube.com/@onevisualedits?si=nPSG5W5mIFFHtuKE' },
+              { Icon: Linkedin, url: 'https://www.linkedin.com/in/short-form-video-editor-757279371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
               { Icon: Twitter, url: 'https://x.com/B__Jeevan' },
             ].map(({ Icon, url }, index) => (
               <a key={index} href={url} target="_blank" rel="noopener noreferrer" className="w-9 h-9 rounded-lg glass-card flex items-center justify-center hover:bg-primary/20 transition-colors group">
