@@ -81,9 +81,9 @@ const Contact = () => {
                 <p className="text-sm text-muted-foreground mb-4">Follow Me</p>
                 <div className="flex gap-3">
                   {[
-                    { Icon: Instagram, href: 'https://www.instagram.com/one_visual_edits?igsh=MXc1ZXU2OHQ5c3ViOA==' },
-                    { Icon: Youtube, href: 'https://youtube.com/@onevisualedits?si=QD1g_0cdzAjVkQWF' },
-                    { Icon: Linkedin, href: 'https://www.linkedin.com/in/one-visual-edits-757279371' },
+                    { Icon: Instagram, href: 'https://www.instagram.com/shortformvideoeditor.in?igsh=MXc1ZXU2OHQ5c3ViOA==' },
+                    { Icon: Youtube, href: 'https://youtube.com/@onevisualedits?si=nPSG5W5mIFFHtuKE' },
+                    { Icon: Linkedin, href: 'https://www.linkedin.com/in/short-form-video-editor-757279371?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
                     { Icon: Twitter, href: 'https://x.com/B__Jeevan' },
                   ].map((social, index) => (
                     <a key={index} href={social.href} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-xl glass-card flex items-center justify-center hover:bg-primary/20 transition-colors group">
